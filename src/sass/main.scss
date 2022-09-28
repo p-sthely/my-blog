@@ -1,0 +1,210 @@
+/***************************
+/* Sommaire
+/***************************
+  1. variables
+  2. global
+  3. .site
+  4. .site__header
+  5. .site__main
+  6. .site__footer
+  7. .card
+*/
+
+/* 1. variables
+/********************************************************************
+*/
+
+/* breakpoints
+*/
+
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+
+/* global variables
+*/
+
+// layout
+$site-width: 100%;  // la largeur que prend la page sur l'écran
+$site-inner-width: 1020px;  // la largeur maximale du contenu
+// text
+$text-size: 1.2rem;
+$serif: serif;
+$sans-serif: sans-serif;
+// color
+$color: #333;
+$bg-color: #eee;
+
+
+/* 2. global
+/********************************************************************
+*/
+
+// prendre en compte la bordure et le remplissage d'un élément
+// pour le calcul de la hauteur et de la largeur
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $serif;
+  font-size: $text-size;
+  color: $color;
+  background-color: $bg-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $color;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* 3. .site
+/********************************************************************
+*/
+
+// la classe "site" représente le premier niveau de block
+// de la page (<header>, <main>, <footer>)
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__header,
+  &__main,
+  &__footer {
+    width: $site-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// définit la largeur maximale du contenu
+@mixin inner-block() {
+  max-width: $site-inner-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+/* 4. .site__header
+/********************************************************************
+*/
+
+.site__header {
+  font-family: $sans-serif;
+
+  &__inner {
+    @include inner-block(); // appliquer la largeur maximale du contenu
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    @media (min-width: $breakpoint-small) {
+      & {
+        flex-direction: row;
+      }
+    }
+  }
+  
+  &__title {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+  }
+  
+  nav {
+    
+    ul {
+      display: flex;
+      column-gap: 1.5rem;
+    }
+  }
+}
+
+/* 5. .site__main
+/********************************************************************
+*/
+
+.site__main {
+  display: flex;
+  flex-grow: 1;
+  
+  &__inner {
+    @include inner-block(); // appliquer la largeur maximale du contenu
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    
+    @media (min-width: $breakpoint-medium) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+/* 6. .site__footer
+/********************************************************************
+*/
+
+.site__footer {
+  font-family: $sans-serif;
+
+  &__inner {
+    @include inner-block(); // appliquer la largeur maximale du contenu
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &__links-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    @media (min-width: $breakpoint-small) {
+      & {
+        flex-direction: row;
+      }
+    }
+  }
+  
+  &__copyright {
+    text-align: center;
+  }
+}
+
+/* 6. .card
+/********************************************************************
+*/
+
+.card {
+  border-bottom: solid thin #333;
+  
+  @media(min-width: $breakpoint-medium) {
+    & {
+      width: 50%;
+      padding: 1rem;
+      border-left: solid thin #333;
+      border-bottom: none;
+    }
+  }
+  
+  &__meta {
+    font-size: .9rem;
+  }
+}
+
