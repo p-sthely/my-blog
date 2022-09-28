@@ -115,9 +115,7 @@ nav ul {
     justify-content: space-between;
     
     @media (min-width: $breakpoint-small) {
-      & {
-        flex-direction: row;
-      }
+      flex-direction: row;
     }
   }
   
@@ -176,9 +174,7 @@ nav ul {
     justify-content: space-evenly;
     
     @media (min-width: $breakpoint-small) {
-      & {
-        flex-direction: row;
-      }
+      flex-direction: row;
     }
   }
   
@@ -195,12 +191,10 @@ nav ul {
   border-bottom: solid thin #333;
   
   @media(min-width: $breakpoint-medium) {
-    & {
-      width: 50%;
-      padding: 1rem;
-      border-left: solid thin #333;
-      border-bottom: none;
-    }
+    width: 50%;
+    padding: 1rem;
+    border-left: solid thin #333;
+    border-bottom: none;
   }
   
   &__meta {
