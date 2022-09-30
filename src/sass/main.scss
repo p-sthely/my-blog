@@ -35,7 +35,6 @@ $sans-serif: sans-serif;
 $color: #333;
 $bg-color: #eee;
 
-
 /* 2. global
 /********************************************************************
 */
@@ -66,6 +65,14 @@ h6 {
 a {
   text-decoration: none;
   color: $color;
+  
+  &:hover {
+    opacity: .8;
+  }
+}
+
+img {
+  width: 100%;  // wrap images to their container
 }
 
 nav ul {
@@ -129,7 +136,7 @@ nav ul {
     
     ul {
       display: flex;
-      column-gap: 1.5rem;
+      column-gap: 1rem;
     }
   }
 }
