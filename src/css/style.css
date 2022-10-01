@@ -116,6 +116,7 @@ nav ul {
   display: flex;
   flex-direction: column;
   align-self: center;
+  row-gap: 4rem;
 }
 @media (min-width: 768px) {
   .site__main__inner {
@@ -155,15 +156,10 @@ nav ul {
 /* 6. .card
 /********************************************************************
 */
-.card {
-  border-bottom: solid thin #333;
-}
 @media (min-width: 768px) {
   .card {
     width: 50%;
     padding: 1rem;
-    border-left: solid thin #333;
-    border-bottom: none;
   }
 }
 .card__meta {
